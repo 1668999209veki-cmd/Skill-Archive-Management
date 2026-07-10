@@ -13,6 +13,8 @@ skill-archive.local.js
 *.temp
 pitch-check*.png
 .seek-tmp-*/
+skill-archive-product-pitch*.mp4
+skill-archive-product-pitch*.wav
 .cache/
 tmp/
 temp/
