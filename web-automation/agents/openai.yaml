@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web Automation"
+  short_description: "Automate webpages with OpenCLI."
+  default_prompt: "Use $web-automation to inspect and automate this webpage with OpenCLI."

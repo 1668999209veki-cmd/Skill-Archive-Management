@@ -1,0 +1,23 @@
+{
+  "skill_name": "web-automation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use my logged-in Chrome tab to fill a web form and stop before submitting it.",
+      "expected_output": "The agent checks OpenCLI setup, binds or opens a named browser session, runs state before acting, fills fields using refs or semantic locators, verifies values, and stops before submission.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Install the webpage automation tool from https://github.com/jackwener/OpenCLI.git and use it to inspect a page.",
+      "expected_output": "The agent installs or checks @jackwener/opencli, installs or refreshes the upstream opencli-browser skill when needed, confirms Browser Bridge with opencli doctor, then inspects the page with opencli browser <session> state.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Scrape a dynamic table from a logged-in dashboard.",
+      "expected_output": "The agent uses OpenCLI for logged-in browser access, prefers network capture or structured extraction over screenshot scraping, protects private data, and verifies the extracted rows against page state.",
+      "files": []
+    }
+  ]
+}

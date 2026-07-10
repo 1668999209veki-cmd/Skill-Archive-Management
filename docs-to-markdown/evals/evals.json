@@ -1,0 +1,23 @@
+{
+  "skill_name": "docs-to-markdown",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a folder of Word, Excel, PowerPoint, and PDF files under C:\\Users\\me\\Downloads\\project-materials. Convert everything to Markdown into C:\\Users\\me\\Downloads\\project-materials-md and preserve the folder structure.",
+      "expected_output": "Uses MarkItDown or the bundled script for recursive batch conversion, writes .md files to the requested output folder, preserves relative paths, and verifies non-empty output plus spot checks for key headings/tables.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "把 C:\\Users\\me\\Desktop\\合同扫描.pdf 转成 md，如果是扫描件就用合适的 OCR/文档智能方案，但不要偷偷调用付费云服务。",
+      "expected_output": "Recognizes the Chinese PDF-to-Markdown request, converts locally first, explains OCR/cloud options for scanned content, avoids paid cloud processing without explicit approval, and reports the Markdown path plus verification.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Please convert quarterly-results.xlsx to Markdown for RAG ingestion. I care that sheet names, table headers, and key numbers survive; layout does not matter.",
+      "expected_output": "Converts the Excel workbook to Markdown, focuses verification on sheet names, table headers, and numeric values, and explicitly notes that layout fidelity is not the goal.",
+      "files": []
+    }
+  ]
+}

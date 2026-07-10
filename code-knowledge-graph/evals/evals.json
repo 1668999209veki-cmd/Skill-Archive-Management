@@ -1,0 +1,23 @@
+{
+  "skill_name": "code-knowledge-graph",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Turn the current repository code into a knowledge graph, tell me where the graph file is, and open the visual dashboard.",
+      "expected_output": "The agent uses code-knowledge-graph, checks Understand-Anything setup, runs or routes to /understand with Chinese output if requested, verifies .understand-anything/knowledge-graph.json, and uses /understand-dashboard or reports the exact next step if dashboard commands are unavailable.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Install Understand-Anything for Codex from https://github.com/Egonex-AI/Understand-Anything.git and use it to map this repo.",
+      "expected_output": "The agent installs from the Egonex-AI source, setting UA_REPO_URL if needed, checks common skill roots, explains restart requirements, generates or refreshes the graph, and reports the graph path without running shell slash commands.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I changed the auth and payment modules. Use the code knowledge graph to explain what these changes may impact.",
+      "expected_output": "The agent checks git status/diff, reuses or refreshes the graph, prefers /understand-diff when available, maps changed files to graph relationships, and calls out uncertainty or stale graph risk.",
+      "files": []
+    }
+  ]
+}

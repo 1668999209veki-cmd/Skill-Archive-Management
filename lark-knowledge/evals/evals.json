@@ -1,0 +1,23 @@
+{
+  "skill_name": "lark-knowledge",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我有一个飞书文档链接 https://example.feishu.cn/docx/doxcnExample ，帮我读取内容并总结关键决策。如果还没装 lark-cli，也请帮我处理安装和登录。",
+      "expected_output": "The agent checks lark-cli availability/authentication, uses docs +fetch with --api-version v2, and summarizes the document rather than using generic web scraping.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我盘点这个飞书知识库 https://example.feishu.cn/wiki/wikcnExample ，找出重复、临时、未归档的文档，先给整理方案，不要直接移动。",
+      "expected_output": "The agent inspects the wiki URL, routes to Drive/Wiki knowledge organization, inventories resources, creates a reviewable plan, and does not execute writes before confirmation.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "这个 wiki 链接里好像是一个表格，帮我看看里面的数据。链接是 https://example.feishu.cn/wiki/wikcnSheetExample",
+      "expected_output": "The agent uses drive +inspect or wiki +node-get to resolve the underlying object type, then routes sheet data access to lark-sheets instead of treating the wiki token as doc text.",
+      "files": []
+    }
+  ]
+}

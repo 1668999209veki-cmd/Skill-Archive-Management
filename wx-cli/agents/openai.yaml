@@ -1,0 +1,4 @@
+interface:
+  display_name: "wx-cli"
+  short_description: "Search and export local WeChat conversations with wx-cli."
+  default_prompt: "Use $wx-cli to search local WeChat chats and export the relevant records."

@@ -1,0 +1,386 @@
+﻿{
+    "checkedAt":  "2026-07-10 20:14:44",
+    "totalRepos":  25,
+    "updateCount":  0,
+    "results":  [
+                    {
+                        "repo":  "alchaincyf/huashu-design",
+                        "url":  "https://github.com/alchaincyf/huashu-design",
+                        "skills":  [
+                                       "huashu-design"
+                                   ],
+                        "localLatest":  "2026-07-04 21:07:07",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "material-components/material-web",
+                        "url":  "https://github.com/material-components/material-web",
+                        "skills":  [
+                                       "design-taste-frontend"
+                                   ],
+                        "localLatest":  "2026-06-09 00:12:48",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "jackwener/OpenCLI",
+                        "url":  "https://github.com/jackwener/OpenCLI",
+                        "skills":  [
+                                       "web-automation"
+                                   ],
+                        "localLatest":  "2026-06-08 21:47:11",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "facebook/react",
+                        "url":  "https://github.com/facebook/react",
+                        "skills":  [
+                                       "vercel-react-view-transitions"
+                                   ],
+                        "localLatest":  "2026-06-08 19:25:09",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "larksuite/cli",
+                        "url":  "https://github.com/larksuite/cli",
+                        "skills":  [
+                                       "lark-knowledge"
+                                   ],
+                        "localLatest":  "2026-06-08 20:31:33",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "LEC-AI/claude-devfleet",
+                        "url":  "https://github.com/LEC-AI/claude-devfleet",
+                        "skills":  [
+                                       "claude-devfleet"
+                                   ],
+                        "localLatest":  "2026-06-07 01:15:30",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "mvanhorn/last30days-skill",
+                        "url":  "https://github.com/mvanhorn/last30days-skill",
+                        "skills":  [
+                                       "last30days"
+                                   ],
+                        "localLatest":  "2026-06-20 23:00:35",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "pachterlab/gget",
+                        "url":  "https://github.com/pachterlab/gget",
+                        "skills":  [
+                                       "gget"
+                                   ],
+                        "localLatest":  "2026-06-07 01:15:30",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "Egonex-AI/Understand-Anything",
+                        "url":  "https://github.com/Egonex-AI/Understand-Anything",
+                        "skills":  [
+                                       "code-knowledge-graph"
+                                   ],
+                        "localLatest":  "2026-06-09 00:14:31",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "supabase/cli",
+                        "url":  "https://github.com/supabase/cli",
+                        "skills":  [
+                                       "supabase"
+                                   ],
+                        "localLatest":  "2026-06-08 21:51:03",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "jackwener/wx-cli",
+                        "url":  "https://github.com/jackwener/wx-cli",
+                        "skills":  [
+                                       "wx-cli"
+                                   ],
+                        "localLatest":  "2026-06-08 21:46:16",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "op7418/guizang-ppt-skill",
+                        "url":  "https://github.com/op7418/guizang-ppt-skill",
+                        "skills":  [
+                                       "guizang-ppt-skill"
+                                   ],
+                        "localLatest":  "2026-06-08 19:59:19",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "affaan-m/agentshield",
+                        "url":  "https://github.com/affaan-m/agentshield",
+                        "skills":  [
+                                       "security-scan"
+                                   ],
+                        "localLatest":  "2026-06-07 01:15:30",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "affaan-m/everything-claude-code",
+                        "url":  "https://github.com/affaan-m/everything-claude-code",
+                        "skills":  [
+                                       "carrier-relationship-management",
+                                       "configure-ecc",
+                                       "customs-trade-compliance",
+                                       "energy-procurement",
+                                       "inventory-demand-planning",
+                                       "logistics-exception-management",
+                                       "production-scheduling",
+                                       "quality-nonconformance",
+                                       "returns-reverse-logistics"
+                                   ],
+                        "localLatest":  "2026-06-07 01:15:30",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "Leonxlnx/taste-skill",
+                        "url":  "https://github.com/Leonxlnx/taste-skill",
+                        "skills":  [
+                                       "design-taste-frontend"
+                                   ],
+                        "localLatest":  "2026-06-09 00:12:48",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "microsoft/markitdown",
+                        "url":  "https://github.com/microsoft/markitdown",
+                        "skills":  [
+                                       "docs-to-markdown"
+                                   ],
+                        "localLatest":  "2026-06-09 00:15:23",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "cli/cli",
+                        "url":  "https://github.com/cli/cli",
+                        "skills":  [
+                                       "github-cli"
+                                   ],
+                        "localLatest":  "2026-06-08 19:26:07",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "openai/skills",
+                        "url":  "https://github.com/openai/skills",
+                        "skills":  [
+                                       "aspnet-core",
+                                       "chatgpt-apps",
+                                       "cli-creator",
+                                       "cloudflare-deploy",
+                                       "define-goal",
+                                       "figma",
+                                       "figma-code-connect-components",
+                                       "figma-create-design-system-rules",
+                                       "figma-create-new-file",
+                                       "figma-generate-design",
+                                       "figma-generate-library",
+                                       "figma-implement-design",
+                                       "figma-use",
+                                       "gh-address-comments",
+                                       "gh-fix-ci",
+                                       "hatch-pet",
+                                       "imagegen",
+                                       "jupyter-notebook",
+                                       "linear",
+                                       "migrate-to-codex",
+                                       "netlify-deploy",
+                                       "notion-knowledge-capture",
+                                       "notion-meeting-intelligence",
+                                       "notion-research-documentation",
+                                       "notion-spec-to-implementation",
+                                       "openai-docs",
+                                       "playwright",
+                                       "playwright-interactive",
+                                       "plugin-creator",
+                                       "render-deploy",
+                                       "screenshot",
+                                       "security-best-practices",
+                                       "security-ownership-map",
+                                       "security-threat-model",
+                                       "sentry",
+                                       "skill-creator",
+                                       "skill-installer",
+                                       "speech",
+                                       "transcribe",
+                                       "vercel-deploy",
+                                       "winui-app",
+                                       "yeet"
+                                   ],
+                        "localLatest":  "2026-07-09 00:23:09",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "anthropics/skills",
+                        "url":  "https://github.com/anthropics/skills",
+                        "skills":  [
+                                       "docx",
+                                       "materials-to-office",
+                                       "pdf",
+                                       "pptx",
+                                       "xlsx"
+                                   ],
+                        "localLatest":  "2026-06-08 21:16:28",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "Panniantong/Agent-Reach",
+                        "url":  "https://github.com/Panniantong/Agent-Reach",
+                        "skills":  [
+                                       "agent-reach"
+                                   ],
+                        "localLatest":  "2026-06-20 23:07:32",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "anthropics/claude-plugins-official",
+                        "url":  "https://github.com/anthropics/claude-plugins-official",
+                        "skills":  [
+                                       "code-simplification"
+                                   ],
+                        "localLatest":  "2026-06-20 23:07:39",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "harry0703/MoneyPrinterTurbo",
+                        "url":  "https://github.com/harry0703/MoneyPrinterTurbo",
+                        "skills":  [
+                                       "moneyprinterturbo-video"
+                                   ],
+                        "localLatest":  "2026-06-09 00:12:41",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "JimLiu/baoyu-skills",
+                        "url":  "https://github.com/JimLiu/baoyu-skills",
+                        "skills":  [
+                                       "baoyu-cover-image",
+                                       "baoyu-diagram"
+                                   ],
+                        "localLatest":  "2026-06-12 01:02:33",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "affaan-m/ECC",
+                        "url":  "https://github.com/affaan-m/ECC",
+                        "skills":  [
+                                       "performance-optimization"
+                                   ],
+                        "localLatest":  "2026-06-20 23:07:39",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    },
+                    {
+                        "repo":  "Xabilimon1/Token-Budget-Advisor-Claude-Code-",
+                        "url":  "https://github.com/Xabilimon1/Token-Budget-Advisor-Claude-Code-",
+                        "skills":  [
+                                       "token-budget-advisor"
+                                   ],
+                        "localLatest":  "2026-06-07 01:15:30",
+                        "remotePushedAt":  null,
+                        "remoteHead":  null,
+                        "checkSource":  "unknown",
+                        "status":  "unknown",
+                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                    }
+                ]
+}

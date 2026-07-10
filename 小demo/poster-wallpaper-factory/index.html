@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poster Wallpaper Factory</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#previewStage">Skip to preview</a>
+    <main class="app-shell">
+      <section class="control-panel" aria-label="Poster controls">
+        <div class="brand-row">
+          <div>
+            <p class="eyebrow">Generative Factory</p>
+            <h1>Poster / Wallpaper</h1>
+          </div>
+          <button class="icon-button" id="randomizeSeed" type="button" title="Shuffle seed" aria-label="Shuffle seed">
+            ↻
+          </button>
+        </div>
+
+        <form id="controls" class="controls">
+          <label class="field">
+            <span>Seed</span>
+            <input id="seed" name="seed" autocomplete="off" spellcheck="false" />
+          </label>
+
+          <fieldset class="field-group">
+            <legend>Layout</legend>
+            <div id="layoutOptions" class="segmented-control"></div>
+          </fieldset>
+
+          <label class="field">
+            <span>Palette</span>
+            <select id="palette" name="palette"></select>
+          </label>
+
+          <label class="field range-field">
+            <span>Density <output id="densityValue"></output></span>
+            <input id="density" name="density" type="range" min="0" max="100" />
+          </label>
+
+          <label class="field range-field">
+            <span>Scale <output id="scaleValue"></output></span>
+            <input id="scale" name="scale" type="range" min="0" max="100" />
+          </label>
+
+          <label class="field range-field">
+            <span>Chaos <output id="chaosValue"></output></span>
+            <input id="chaos" name="chaos" type="range" min="0" max="100" />
+          </label>
+        </form>
+
+        <div class="actions">
+          <button id="exportPng" class="primary-button" type="button">Export PNG</button>
+          <button id="copyLink" class="secondary-button" type="button">Copy Link</button>
+        </div>
+        <p id="copyStatus" class="sr-only" aria-live="polite"></p>
+
+        <dl class="meta-list">
+          <div>
+            <dt>Canvas</dt>
+            <dd>1080 x 1440</dd>
+          </div>
+          <div>
+            <dt>Signature</dt>
+            <dd id="signature">halo-grid/studio-001</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="previewStage" class="preview-stage" aria-label="Generated poster preview">
+        <div id="canvasMount" class="canvas-mount"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "skill_name": "materials-to-office",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我贴一段会议纪要，帮我整理成可跟进的表格，最好能有负责人、截止时间、优先级和状态。",
+      "expected_output": "The agent extracts action items into a structured table with owner, due date, priority, status, source notes, and explicit assumptions for missing data.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这里有一堆调研资料，帮我做成一份给老板看的汇报PPT，重点突出结论、证据和下一步建议。",
+      "expected_output": "The agent routes to a presentation workflow, creates a concise storyline, uses slide-level messages, includes evidence and recommendations, and avoids simply copying long prose into slides.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "把这些产品反馈整理成一个Excel和一份Word报告，表格要能筛选问题类型，报告要有摘要和改进建议。",
+      "expected_output": "The agent creates a shared source outline, derives a spreadsheet schema for feedback analysis, drafts a report with executive summary and recommendations, and cross-checks consistency between the two outputs.",
+      "files": []
+    }
+  ]
+}

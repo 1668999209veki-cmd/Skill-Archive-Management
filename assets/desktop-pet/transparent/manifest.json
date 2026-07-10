@@ -1,0 +1,137 @@
+{
+  "canvas": 512,
+  "subjectHeight": 468,
+  "bottomPad": 22,
+  "static": [
+    {
+      "source": "默认动作-站立.png",
+      "output": "assets\\desktop-pet\\transparent\\static\\default.png",
+      "bbox": [
+        434,
+        275,
+        1587,
+        2048
+      ],
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source": "微笑-倾听-等待输入.png",
+      "output": "assets\\desktop-pet\\transparent\\static\\listen.png",
+      "bbox": [
+        446,
+        278,
+        1608,
+        2048
+      ],
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source": "交谈-对话-微笑.png",
+      "output": "assets\\desktop-pet\\transparent\\static\\talk.png",
+      "bbox": [
+        439,
+        271,
+        1606,
+        2048
+      ],
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source": "兴奋.png",
+      "output": "assets\\desktop-pet\\transparent\\static\\happy.png",
+      "bbox": [
+        365,
+        162,
+        1517,
+        1951
+      ],
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source": "卖萌.png",
+      "output": "assets\\desktop-pet\\transparent\\static\\cute.png",
+      "bbox": [
+        439,
+        271,
+        1603,
+        2048
+      ],
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source": "无奈-思考-晕.png",
+      "output": "assets\\desktop-pet\\transparent\\static\\dizzy.png",
+      "bbox": [
+        373,
+        273,
+        1609,
+        2048
+      ],
+      "size": [
+        512,
+        512
+      ]
+    }
+  ],
+  "motion": [
+    {
+      "source": "桌面宠物-兴奋.mp4",
+      "output": "assets\\desktop-pet\\transparent\\motion\\excited.png",
+      "bbox": [
+        7,
+        0,
+        374,
+        288
+      ],
+      "frames": 51
+    },
+    {
+      "source": "桌面宠物-投喂成功-1.mp4",
+      "output": "assets\\desktop-pet\\transparent\\motion\\feed.png",
+      "bbox": [
+        113,
+        0,
+        396,
+        288
+      ],
+      "frames": 18
+    },
+    {
+      "source": "桌面宠物-撒娇.mp4",
+      "output": "assets\\desktop-pet\\transparent\\motion\\cute.png",
+      "bbox": [
+        154,
+        26,
+        352,
+        288
+      ],
+      "frames": 45
+    },
+    {
+      "source": "桌面宠物-肚子饿.mp4",
+      "output": "assets\\desktop-pet\\transparent\\motion\\hungry.png",
+      "bbox": [
+        34,
+        46,
+        351,
+        512
+      ],
+      "frames": 51
+    }
+  ]
+}

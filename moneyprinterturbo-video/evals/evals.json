@@ -1,0 +1,23 @@
+{
+  "skill_name": "moneyprinterturbo-video",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我用 MoneyPrinterTurbo 一键生成一个 9:16 高清短视频，主题是“上海外滩夜景旅行灵感”，输出到当前目录的 mpt-output 文件夹。",
+      "expected_output": "The agent should use the MoneyPrinterTurbo skill, check or install the upstream project, ensure configuration is ready, invoke the bundled automation script or equivalent API flow, and report task ID plus downloaded video paths or clear configuration gaps.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我已经写好了旁白文案，想把它转成 YouTube Shorts 竖屏视频：第一，番茄先去皮切碎。第二，小火熬出汁水。第三，加入鸡蛋快速翻炒。请用随机背景音乐和字幕。",
+      "expected_output": "The agent should pass the provided script as video_script/ScriptText, default to 9:16, subtitles enabled, random BGM, and avoid unnecessary LLM script generation when possible.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "安装地址是 https://github.com/harry0703/MoneyPrinterTurbo.git，帮我先配置成能调用本地 API 生成短视频，不要打开 WebUI。",
+      "expected_output": "The agent should clone or locate MoneyPrinterTurbo, set up dependencies with uv, copy config.example.toml to config.toml if needed, explain required provider/material keys, and start or prepare the API path without using the WebUI.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Knowledge Graph"
+  short_description: "Map codebases with Understand-Anything."
+  default_prompt: "Use $code-knowledge-graph to turn this codebase into a knowledge graph with Understand-Anything."

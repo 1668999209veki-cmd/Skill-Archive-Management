@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stop Slop MVP</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23246b5f'/%3E%3Cpath d='M8 10h16v3H8zm0 6h12v3H8zm0 6h16v3H8z' fill='white'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Stop Slop editor">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Stop Slop MVP</p>
+            <h1>Make AI drafts sound human</h1>
+          </div>
+          <div class="metrics" aria-label="Draft metrics">
+            <div class="metric">
+              <span id="score" class="metric-value" data-level="ok">0</span>
+              <span class="metric-label">score</span>
+            </div>
+            <div class="metric">
+              <span id="hit-count" class="metric-value">0</span>
+              <span class="metric-label">hits</span>
+            </div>
+            <div class="metric">
+              <span id="language" class="metric-value">Mixed</span>
+              <span class="metric-label">language</span>
+            </div>
+          </div>
+        </header>
+
+        <div id="sample-bar" class="sample-bar" aria-label="Sample drafts"></div>
+
+        <div class="editor-grid">
+          <section class="panel" aria-labelledby="input-title">
+            <div class="panel-header">
+              <h2 id="input-title">Draft</h2>
+              <button id="clear-button" class="icon-button" type="button" aria-label="Clear draft" title="Clear draft">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <textarea id="draft-input" spellcheck="false" aria-label="Input draft"></textarea>
+            <div class="toolbar">
+              <button id="rewrite-button" class="primary-button" type="button">Rewrite</button>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="output-title">
+            <div class="panel-header">
+              <h2 id="output-title">Natural rewrite</h2>
+              <div class="button-row">
+                <button id="copy-button" class="icon-button" type="button" aria-label="Copy rewrite" title="Copy rewrite">
+                  <span aria-hidden="true">⧉</span>
+                </button>
+                <button id="swap-button" class="icon-button" type="button" aria-label="Use rewrite as draft" title="Use rewrite as draft">
+                  <span aria-hidden="true">↺</span>
+                </button>
+              </div>
+            </div>
+            <textarea id="rewrite-output" readonly spellcheck="false" aria-label="Rewrite output"></textarea>
+            <div id="category-list" class="category-list" aria-label="Issue categories"></div>
+          </section>
+        </div>
+
+        <section class="inspector" aria-labelledby="inspector-title">
+          <h2 id="inspector-title">Detected patterns</h2>
+          <ul id="issue-list" class="issue-list"></ul>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
