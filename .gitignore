@@ -12,6 +12,7 @@ skill-archive.local.js
 *.tmp
 *.temp
 pitch-check*.png
+pitch-final-frame*.png
 .seek-tmp-*/
 skill-archive-product-pitch*.mp4
 skill-archive-product-pitch*.wav
