@@ -2,14 +2,15 @@
 setlocal
 
 set "SCRIPT_DIR=%~dp0"
-cd /d "%SCRIPT_DIR%"
+set "REPO_ROOT=%SCRIPT_DIR%..\.."
+cd /d "%REPO_ROOT%"
 
 echo.
 echo Skill Archive Management
 echo Generating and opening skill-archive.html...
 echo.
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_DIR%scripts\setup-dashboard.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%REPO_ROOT%\scripts\setup-dashboard.ps1"
 
 if errorlevel 1 (
   echo.

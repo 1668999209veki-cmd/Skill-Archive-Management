@@ -10,8 +10,7 @@ This repository is organized around one primary artifact: `skill-archive.html`.
 - `skill-update-report.html`: human-readable update report.
 - `skill-update-report.json`: machine-readable update report.
 - `skill-update-run.json`: latest local update run summary.
-- `启动 Skill档案管理.cmd`: Windows double-click launcher for generating and opening the dashboard.
-- `启动 Skill档案管理.command`: macOS double-click launcher for generating and opening the dashboard.
+- `AGENTS.md`: Codex-facing instructions that make the dashboard launcher the default install flow.
 - `.env.example`: public environment variable template.
 - `pet-secrets.example.js`: public page-pet model configuration template.
 - `.gitignore`: local secrets, logs, caches, generated media, model weights, and IDE files.
@@ -21,6 +20,8 @@ This repository is organized around one primary artifact: `skill-archive.html`.
 ## Directories
 
 - `scripts/`: PowerShell and Python utilities for dashboard setup, archive generation, update checks, source indexing, and pet asset processing.
+- `launchers/windows/`: Windows double-click launcher for generating and opening the dashboard.
+- `launchers/macos/`: macOS double-click launcher for generating and opening the dashboard.
 - `assets/desktop-pet/`: static and motion assets for the “小V” page administrator.
 - `assets/previews/`: preview images and visual references for the archive page.
 - `docs/`: supporting documentation and design notes.

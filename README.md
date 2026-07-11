@@ -16,13 +16,13 @@
 Windows 用户可以直接双击：
 
 ```text
-启动 Skill档案管理.cmd
+launchers/windows/start-dashboard.cmd
 ```
 
 macOS 用户可以直接双击：
 
 ```text
-启动 Skill档案管理.command
+launchers/macos/start-dashboard.command
 ```
 
 macOS 没装 PowerShell 也能打开仓库自带的 `skill-archive.html` 看板；如果想刷新成这台 Mac 的本机 Skill 数据，需要先安装 PowerShell 7+：
@@ -32,6 +32,14 @@ brew install --cask powershell
 ```
 
 启动器会优先尝试刷新并打开 `skill-archive.html`；如果没有 PowerShell，会降级为直接打开已有看板。
+
+如果你是把 GitHub 仓库地址交给 Codex 安装，请告诉 Codex：
+
+```text
+安装后请运行本仓库对应系统的 dashboard launcher，刷新并打开 skill-archive.html。不要默认生成分类索引或健康检查报告。
+```
+
+仓库里的 [AGENTS.md](AGENTS.md) 也写了这条默认流程，用来提醒 Codex 优先生成看板。
 
 命令行方式：
 
@@ -85,14 +93,14 @@ $env:SKILL_ARCHIVE_AGENTS_SKILLS_DIR="$env:USERPROFILE\.agents\skills"
 一键生成并打开看板：
 
 ```powershell
-.\启动 Skill档案管理.cmd
+.\launchers\windows\start-dashboard.cmd
 ```
 
 macOS：
 
 ```bash
-chmod +x "启动 Skill档案管理.command"
-./"启动 Skill档案管理.command"
+chmod +x launchers/macos/start-dashboard.command
+./launchers/macos/start-dashboard.command
 ```
 
 或：

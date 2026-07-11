@@ -2,18 +2,19 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$SCRIPT_DIR"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+cd "$REPO_ROOT"
 
 echo
 echo "Skill Archive Management"
 echo "Opening skill-archive.html..."
 echo
 
-ARCHIVE_PATH="$SCRIPT_DIR/skill-archive.html"
+ARCHIVE_PATH="$REPO_ROOT/skill-archive.html"
 
 if command -v pwsh >/dev/null 2>&1; then
   echo "PowerShell found. Refreshing the local dashboard first..."
-  pwsh -NoProfile -ExecutionPolicy Bypass -File "$SCRIPT_DIR/scripts/setup-dashboard.ps1" -NoOpen
+  pwsh -NoProfile -ExecutionPolicy Bypass -File "$REPO_ROOT/scripts/setup-dashboard.ps1" -NoOpen
 else
   echo "PowerShell 7+ was not found."
   echo "Opening the bundled dashboard without refreshing local Skill data."
