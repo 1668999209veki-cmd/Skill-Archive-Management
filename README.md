@@ -19,6 +19,18 @@ Windows 用户可以直接双击：
 启动 Skill档案管理.cmd
 ```
 
+macOS 用户可以直接双击：
+
+```text
+启动 Skill档案管理.command
+```
+
+macOS 需要先安装 PowerShell 7+：
+
+```bash
+brew install --cask powershell
+```
+
 它会生成并打开 `skill-archive.html`，也就是项目默认看板。
 
 命令行方式：
@@ -74,6 +86,13 @@ $env:SKILL_ARCHIVE_AGENTS_SKILLS_DIR="$env:USERPROFILE\.agents\skills"
 
 ```powershell
 .\启动 Skill档案管理.cmd
+```
+
+macOS：
+
+```bash
+chmod +x "启动 Skill档案管理.command"
+./"启动 Skill档案管理.command"
 ```
 
 或：

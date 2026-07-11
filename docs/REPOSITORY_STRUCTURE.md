@@ -11,6 +11,7 @@ This repository is organized around one primary artifact: `skill-archive.html`.
 - `skill-update-report.json`: machine-readable update report.
 - `skill-update-run.json`: latest local update run summary.
 - `启动 Skill档案管理.cmd`: Windows double-click launcher for generating and opening the dashboard.
+- `启动 Skill档案管理.command`: macOS double-click launcher for generating and opening the dashboard.
 - `.env.example`: public environment variable template.
 - `pet-secrets.example.js`: public page-pet model configuration template.
 - `.gitignore`: local secrets, logs, caches, generated media, model weights, and IDE files.
