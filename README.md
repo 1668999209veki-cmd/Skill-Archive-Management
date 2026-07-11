@@ -54,7 +54,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup-dashboard.ps
 
 默认会扫描：
 
-- 当前仓库目录
+- 当前仓库的 `skills/` 目录
 - `%USERPROFILE%\.codex\skills`
 - `%USERPROFILE%\.agents\skills`
 

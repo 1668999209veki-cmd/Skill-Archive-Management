@@ -21,7 +21,7 @@ function Get-ConfiguredPath {
 }
 
 $roots = @(
-  (Get-ConfiguredPath "SKILL_ARCHIVE_PROJECT_SKILLS_DIR" (Get-Location).Path),
+  (Get-ConfiguredPath "SKILL_ARCHIVE_PROJECT_SKILLS_DIR" (Join-Path (Get-Location) "skills")),
   (Get-ConfiguredPath "SKILL_ARCHIVE_CODEX_SKILLS_DIR" (Join-Path $env:USERPROFILE ".codex\skills")),
   (Get-ConfiguredPath "SKILL_ARCHIVE_AGENTS_SKILLS_DIR" (Join-Path $env:USERPROFILE ".agents\skills"))
 )

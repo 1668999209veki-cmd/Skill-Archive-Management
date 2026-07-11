@@ -39,7 +39,7 @@ function ConvertTo-PublicPath {
 
 $roots = @(
   # Fill these paths through environment variables when running on another machine.
-  @{ Path = (Get-ConfiguredPath "SKILL_ARCHIVE_PROJECT_SKILLS_DIR" (Get-Location).Path); PublicPrefix = "{{PROJECT_SKILLS_DIR}}"; Label = (T "&#x4E2A;&#x4EBA;&#x6574;&#x7406;"); Rank = 0 },
+  @{ Path = (Get-ConfiguredPath "SKILL_ARCHIVE_PROJECT_SKILLS_DIR" (Join-Path (Get-Location) "skills")); PublicPrefix = "{{PROJECT_SKILLS_DIR}}"; Label = (T "&#x4E2A;&#x4EBA;&#x6574;&#x7406;"); Rank = 0 },
   @{ Path = (Get-ConfiguredPath "SKILL_ARCHIVE_CODEX_SKILLS_DIR" (Join-Path $env:USERPROFILE ".codex\skills")); PublicPrefix = "{{CODEX_SKILLS_DIR}}"; Label = (T "Codex &#x5DF2;&#x5B89;&#x88C5;"); Rank = 1 },
   @{ Path = (Get-ConfiguredPath "SKILL_ARCHIVE_AGENTS_SKILLS_DIR" (Join-Path $env:USERPROFILE ".agents\skills")); PublicPrefix = "{{AGENTS_SKILLS_DIR}}"; Label = (T "Agents &#x5DF2;&#x5B89;&#x88C5;"); Rank = 2 }
 )
