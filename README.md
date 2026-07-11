@@ -17,10 +17,10 @@
 git clone https://github.com/1668999209veki-cmd/Skill-Archive-Management.git
 cd Skill-Archive-Management
 Copy-Item .env.example .env
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\generate-skill-archive.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup-dashboard.ps1
 ```
 
-生成完成后，用浏览器打开 `skill-archive.html`。
+这个命令会生成并打开 `skill-archive.html`，也就是项目默认看板。
 
 默认会扫描：
 
@@ -60,21 +60,22 @@ $env:SKILL_ARCHIVE_AGENTS_SKILLS_DIR="$env:USERPROFILE\.agents\skills"
 
 ## 常用命令
 
-重新生成档案页：
+一键生成并打开看板：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup-dashboard.ps1
+```
+
+只重新生成档案页，不自动打开浏览器：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\generate-skill-archive.ps1
 ```
 
-构建 Skill 来源索引：
+下面两个脚本是可选维护工具，不是默认安装看板：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-skill-source-index.ps1
-```
-
-检查 Skill 更新：
-
-```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\check-skill-updates.ps1
 ```
 

@@ -18,7 +18,7 @@ This repository is organized around one primary artifact: `skill-archive.html`.
 
 ## Directories
 
-- `scripts/`: PowerShell and Python utilities for archive generation, update checks, source indexing, and pet asset processing.
+- `scripts/`: PowerShell and Python utilities for dashboard setup, archive generation, update checks, source indexing, and pet asset processing.
 - `assets/desktop-pet/`: static and motion assets for the “小V” page administrator.
 - `assets/previews/`: preview images and visual references for the archive page.
 - `docs/`: supporting documentation and design notes.
