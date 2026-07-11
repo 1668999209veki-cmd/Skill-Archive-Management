@@ -6,20 +6,29 @@ cd "$SCRIPT_DIR"
 
 echo
 echo "Skill Archive Management"
-echo "Generating and opening skill-archive.html..."
+echo "Opening skill-archive.html..."
 echo
 
-if ! command -v pwsh >/dev/null 2>&1; then
-  echo "PowerShell 7+ is required on macOS."
-  echo "Install it with Homebrew:"
+ARCHIVE_PATH="$SCRIPT_DIR/skill-archive.html"
+
+if command -v pwsh >/dev/null 2>&1; then
+  echo "PowerShell found. Refreshing the local dashboard first..."
+  pwsh -NoProfile -ExecutionPolicy Bypass -File "$SCRIPT_DIR/scripts/setup-dashboard.ps1" -NoOpen
+else
+  echo "PowerShell 7+ was not found."
+  echo "Opening the bundled dashboard without refreshing local Skill data."
+  echo "To refresh from this Mac later, install PowerShell:"
   echo "  brew install --cask powershell"
   echo
-  echo "After installation, double-click this launcher again."
+fi
+
+if [ ! -f "$ARCHIVE_PATH" ]; then
+  echo "Missing skill-archive.html. Please download the full repository archive."
   read -r -p "Press Enter to close..."
   exit 1
 fi
 
-pwsh -NoProfile -ExecutionPolicy Bypass -File "$SCRIPT_DIR/scripts/setup-dashboard.ps1"
+open "$ARCHIVE_PATH"
 
 echo
 echo "Done. If the browser did not open, open skill-archive.html manually."

@@ -25,13 +25,13 @@ macOS 用户可以直接双击：
 启动 Skill档案管理.command
 ```
 
-macOS 需要先安装 PowerShell 7+：
+macOS 没装 PowerShell 也能打开仓库自带的 `skill-archive.html` 看板；如果想刷新成这台 Mac 的本机 Skill 数据，需要先安装 PowerShell 7+：
 
 ```bash
 brew install --cask powershell
 ```
 
-它会生成并打开 `skill-archive.html`，也就是项目默认看板。
+启动器会优先尝试刷新并打开 `skill-archive.html`；如果没有 PowerShell，会降级为直接打开已有看板。
 
 命令行方式：
 
