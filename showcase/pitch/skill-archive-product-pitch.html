@@ -531,7 +531,7 @@
       const assistant = between(t, 18, 20.8);
       const finale = between(t, 23.2, 26.8);
 
-      const heroOpacity = t < 23.2 ? between(t, 0, 1) : between(t, 23.2, 24.4);
+      const heroOpacity = t < 23.2 ? 1 : between(t, 23.2, 24.4);
       set(els.hero, {
         opacity: String(heroOpacity),
         transform: `translate3d(${mix(-44, 0, intro)}px, ${mix(26, 0, intro)}px, 0) scale(${mix(1.06, .92, product)})`
@@ -586,7 +586,7 @@
 
       els.caption.textContent = currentCaption(t);
       set(els.caption, {
-        opacity: String(opacity(t, 0, .7, 27.4, 28)),
+        opacity: String(1 - between(t, 27.4, 28)),
         transform: `translateX(-50%) translateY(${mix(18, 0, between(t, 0, .9))}px)`
       });
     }

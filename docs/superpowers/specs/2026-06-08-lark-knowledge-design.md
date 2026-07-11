@@ -22,7 +22,7 @@ The skill does not duplicate full command references from `larksuite/cli`. It po
 
 ## Architecture
 
-`lark-knowledge/SKILL.md` contains:
+`skills/lark-knowledge/SKILL.md` contains:
 
 - Trigger-focused frontmatter.
 - A quick setup workflow for `lark-cli`.
@@ -31,7 +31,7 @@ The skill does not duplicate full command references from `larksuite/cli`. It po
 - Command examples for inspect, search, fetch, and wiki node lookup.
 - Safety rules for destructive or bulk write operations.
 
-`lark-knowledge/evals/evals.json` contains a few realistic prompts that can be used later to test triggering and routing behavior.
+`skills/lark-knowledge/evals/evals.json` contains a few realistic prompts that can be used later to test triggering and routing behavior.
 
 ## Data Flow
 

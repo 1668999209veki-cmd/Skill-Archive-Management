@@ -498,7 +498,7 @@ $systemSkillCount = @($records | Where-Object {
   ($sourceKinds -contains "system") -and -not ($sourceKinds -contains "codex") -and -not ($sourceKinds -contains "agents") -and -not ($sourceKinds -contains "personal")
 }).Count
 $historicalCounts = Get-HistoricalSkillCounts -Names @($records | ForEach-Object { $_["name"] })
-$updateReportPath = Join-Path (Get-Location) "skill-update-report.json"
+$updateReportPath = Join-Path (Join-Path (Get-Location) "reports") "skill-update-report.json"
 $updateBySkill = @{}
 $pendingSkillNames = New-Object System.Collections.Generic.HashSet[string]
 $lastUpdateCheck = ""
@@ -522,7 +522,7 @@ if (Test-Path -LiteralPath $updateReportPath) {
       }
     }
   } catch {
-    Write-Warning "Could not read skill-update-report.json: $($_.Exception.Message)"
+    Write-Warning "Could not read reports/skill-update-report.json: $($_.Exception.Message)"
   }
 }
 $pendingUpdateCount = $pendingSkillNames.Count

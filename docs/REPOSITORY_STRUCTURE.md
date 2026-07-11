@@ -7,9 +7,6 @@ This repository is organized around one primary artifact: `skill-archive.html`.
 - `README.md`: project overview, quick start, common commands, and safety notes.
 - `skill-archive.html`: generated archive page. Open it directly in a browser.
 - `skill-source-index.json`: source mapping used to link Skills back to upstream repositories.
-- `skill-update-report.html`: human-readable update report.
-- `skill-update-report.json`: machine-readable update report.
-- `skill-update-run.json`: latest local update run summary.
 - `AGENTS.md`: Codex-facing instructions that make the dashboard launcher the default install flow.
 - `.env.example`: public environment variable template.
 - `pet-secrets.example.js`: public page-pet model configuration template.
@@ -25,27 +22,32 @@ This repository is organized around one primary artifact: `skill-archive.html`.
 - `assets/desktop-pet/`: static and motion assets for the “小V” page administrator.
 - `assets/previews/`: preview images and visual references for the archive page.
 - `docs/`: supporting documentation and design notes.
-- `code-knowledge-graph/`, `docs-to-markdown/`, `lark-knowledge/`, `materials-to-office/`, `moneyprinterturbo-video/`, `performance-optimization/`, `web-automation/`, `wx-cli/`: local Skill packages included in the archive source set.
-- `stop-slop-mvp/`: small testable web app used as a lightweight quality check.
-- `小demo/poster-wallpaper-factory/`: small poster/wallpaper demo with tests.
-- `skill-update-backups/`: local update backup output.
+- `skills/`: local Skill packages included in the archive source set.
+- `examples/stop-slop-mvp/`: small testable web app used as a lightweight quality check.
+- `examples/小demo/poster-wallpaper-factory/`: small poster/wallpaper demo with tests.
+- `reports/`: update reports, update run summaries, and local update backups.
+- `showcase/pitch/`: pitch page and local pitch media exports.
+- `showcase/layouts/`: layout explorations and screenshots.
 
 ## Generated vs Source Files
 
 Treat these as generated or machine-local outputs:
 
 - `skill-archive.html`
-- `skill-update-report.html`
-- `skill-update-report.json`
-- `skill-update-run.json`
-- `skill-update-backups/`
+- `reports/skill-update-report.html`
+- `reports/skill-update-report.json`
+- `reports/skill-update-run.json`
+- `reports/skill-update-backups/`
+- `showcase/pitch/`
+- `showcase/layouts/`
 
 Treat these as source/configuration:
 
 - `scripts/`
 - `assets/desktop-pet/`
 - `assets/previews/`
-- Skill package directories
+- `skills/`
+- `examples/`
 - `.env.example`
 - `pet-secrets.example.js`
 - Documentation files

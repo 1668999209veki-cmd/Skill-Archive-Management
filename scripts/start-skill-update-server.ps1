@@ -62,8 +62,9 @@ while ($listener.IsListening) {
     if ($path -eq "") { $path = "/" }
 
     if ($context.Request.HttpMethod -eq "GET" -and $path -eq "/status") {
-      $reportPath = Join-Path $root "skill-update-report.json"
-      $runPath = Join-Path $root "skill-update-run.json"
+      $reportRoot = Join-Path $root "reports"
+      $reportPath = Join-Path $reportRoot "skill-update-report.json"
+      $runPath = Join-Path $reportRoot "skill-update-run.json"
       $report = if (Test-Path -LiteralPath $reportPath) { Get-Content -LiteralPath $reportPath -Raw -Encoding UTF8 | ConvertFrom-Json } else { $null }
       $run = if (Test-Path -LiteralPath $runPath) { Get-Content -LiteralPath $runPath -Raw -Encoding UTF8 | ConvertFrom-Json } else { $null }
       Write-JsonResponse -Context $context -StatusCode 200 -Body @{ ok = $true; report = $report; lastRun = $run }
@@ -77,7 +78,7 @@ while ($listener.IsListening) {
         continue
       }
       $generate = Invoke-SkillCommand -Command "& '.\scripts\generate-skill-archive.ps1'"
-      $reportPath = Join-Path $root "skill-update-report.json"
+      $reportPath = Join-Path (Join-Path $root "reports") "skill-update-report.json"
       $report = if (Test-Path -LiteralPath $reportPath) { Get-Content -LiteralPath $reportPath -Raw -Encoding UTF8 | ConvertFrom-Json } else { $null }
       Write-JsonResponse -Context $context -StatusCode 200 -Body @{ ok = $true; check = $check; generate = $generate; report = $report }
       continue
@@ -92,7 +93,7 @@ while ($listener.IsListening) {
 
       $refreshCheck = Invoke-SkillCommand -Command "& '.\scripts\check-skill-updates.ps1'"
       $generate = Invoke-SkillCommand -Command "& '.\scripts\generate-skill-archive.ps1'"
-      $runPath = Join-Path $root "skill-update-run.json"
+      $runPath = Join-Path (Join-Path $root "reports") "skill-update-run.json"
       $run = if (Test-Path -LiteralPath $runPath) { Get-Content -LiteralPath $runPath -Raw -Encoding UTF8 | ConvertFrom-Json } else { $null }
       Write-JsonResponse -Context $context -StatusCode 200 -Body @{ ok = $true; update = $update; refreshCheck = $refreshCheck; generate = $generate; run = $run }
       continue

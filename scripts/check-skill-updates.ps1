@@ -1,11 +1,13 @@
 param(
-  [string]$OutputJson = (Join-Path (Get-Location) "skill-update-report.json"),
-  [string]$OutputHtml = (Join-Path (Get-Location) "skill-update-report.html"),
+  [string]$OutputJson = (Join-Path (Join-Path (Get-Location) "reports") "skill-update-report.json"),
+  [string]$OutputHtml = (Join-Path (Join-Path (Get-Location) "reports") "skill-update-report.html"),
   [switch]$UseGitFallback,
   [int]$GitTimeoutSec = 25
 )
 
 $ErrorActionPreference = "Stop"
+
+New-Item -ItemType Directory -Force -Path (Split-Path -Parent $OutputJson), (Split-Path -Parent $OutputHtml) | Out-Null
 
 function Get-ConfiguredPath {
   param(

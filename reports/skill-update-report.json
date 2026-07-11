@@ -1,7 +1,7 @@
 ﻿{
-    "checkedAt":  "2026-07-10 20:14:44",
+    "checkedAt":  "2026-07-11 09:32:04",
     "totalRepos":  25,
-    "updateCount":  0,
+    "updateCount":  22,
     "results":  [
                     {
                         "repo":  "alchaincyf/huashu-design",
@@ -10,11 +10,11 @@
                                        "huashu-design"
                                    ],
                         "localLatest":  "2026-07-04 21:07:07",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-02 11:49:28",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "current",
+                        "message":  "GitHub API checked. No newer remote commit detected."
                     },
                     {
                         "repo":  "material-components/material-web",
@@ -23,11 +23,11 @@
                                        "design-taste-frontend"
                                    ],
                         "localLatest":  "2026-06-09 00:12:48",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-10 22:50:31",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "jackwener/OpenCLI",
@@ -36,11 +36,11 @@
                                        "web-automation"
                                    ],
                         "localLatest":  "2026-06-08 21:47:11",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-05 01:35:15",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "facebook/react",
@@ -49,11 +49,11 @@
                                        "vercel-react-view-transitions"
                                    ],
                         "localLatest":  "2026-06-08 19:25:09",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-10 11:04:54",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "larksuite/cli",
@@ -62,11 +62,11 @@
                                        "lark-knowledge"
                                    ],
                         "localLatest":  "2026-06-08 20:31:33",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-10 23:18:41",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "LEC-AI/claude-devfleet",
@@ -75,11 +75,11 @@
                                        "claude-devfleet"
                                    ],
                         "localLatest":  "2026-06-07 01:15:30",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-05-28 23:51:29",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "current",
+                        "message":  "GitHub API checked. No newer remote commit detected."
                     },
                     {
                         "repo":  "mvanhorn/last30days-skill",
@@ -88,11 +88,11 @@
                                        "last30days"
                                    ],
                         "localLatest":  "2026-06-20 23:00:35",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-11 09:12:19",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "pachterlab/gget",
@@ -101,11 +101,11 @@
                                        "gget"
                                    ],
                         "localLatest":  "2026-06-07 01:15:30",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-10 02:12:47",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "Egonex-AI/Understand-Anything",
@@ -114,11 +114,11 @@
                                        "code-knowledge-graph"
                                    ],
                         "localLatest":  "2026-06-09 00:14:31",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-11 09:07:24",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "supabase/cli",
@@ -127,11 +127,11 @@
                                        "supabase"
                                    ],
                         "localLatest":  "2026-06-08 21:51:03",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-11 09:08:02",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "jackwener/wx-cli",
@@ -140,11 +140,11 @@
                                        "wx-cli"
                                    ],
                         "localLatest":  "2026-06-08 21:46:16",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-06-11 20:13:30",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "op7418/guizang-ppt-skill",
@@ -153,11 +153,11 @@
                                        "guizang-ppt-skill"
                                    ],
                         "localLatest":  "2026-06-08 19:59:19",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-06-02 17:53:57",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "current",
+                        "message":  "GitHub API checked. No newer remote commit detected."
                     },
                     {
                         "repo":  "affaan-m/agentshield",
@@ -166,11 +166,11 @@
                                        "security-scan"
                                    ],
                         "localLatest":  "2026-06-07 01:15:30",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-06-23 15:19:42",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "affaan-m/everything-claude-code",
@@ -187,11 +187,11 @@
                                        "returns-reverse-logistics"
                                    ],
                         "localLatest":  "2026-06-07 01:15:30",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-09 15:53:52",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "Leonxlnx/taste-skill",
@@ -200,11 +200,11 @@
                                        "design-taste-frontend"
                                    ],
                         "localLatest":  "2026-06-09 00:12:48",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-05 06:02:55",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "microsoft/markitdown",
@@ -213,11 +213,11 @@
                                        "docs-to-markdown"
                                    ],
                         "localLatest":  "2026-06-09 00:15:23",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-06-24 23:32:46",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "cli/cli",
@@ -226,11 +226,11 @@
                                        "github-cli"
                                    ],
                         "localLatest":  "2026-06-08 19:26:07",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-11 02:36:07",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "openai/skills",
@@ -280,11 +280,11 @@
                                        "yeet"
                                    ],
                         "localLatest":  "2026-07-09 00:23:09",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-10 03:53:55",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "anthropics/skills",
@@ -297,11 +297,11 @@
                                        "xlsx"
                                    ],
                         "localLatest":  "2026-06-08 21:16:28",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-02 02:11:25",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "Panniantong/Agent-Reach",
@@ -310,11 +310,11 @@
                                        "agent-reach"
                                    ],
                         "localLatest":  "2026-06-20 23:07:32",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-10 23:45:18",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "anthropics/claude-plugins-official",
@@ -323,11 +323,11 @@
                                        "code-simplification"
                                    ],
                         "localLatest":  "2026-06-20 23:07:39",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-11 08:12:09",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "harry0703/MoneyPrinterTurbo",
@@ -336,11 +336,11 @@
                                        "moneyprinterturbo-video"
                                    ],
                         "localLatest":  "2026-06-09 00:12:41",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-09 14:54:22",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "JimLiu/baoyu-skills",
@@ -350,11 +350,11 @@
                                        "baoyu-diagram"
                                    ],
                         "localLatest":  "2026-06-12 01:02:33",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-05 00:25:18",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "affaan-m/ECC",
@@ -363,11 +363,11 @@
                                        "performance-optimization"
                                    ],
                         "localLatest":  "2026-06-20 23:07:39",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-07-09 15:53:52",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     },
                     {
                         "repo":  "Xabilimon1/Token-Budget-Advisor-Claude-Code-",
@@ -376,11 +376,11 @@
                                        "token-budget-advisor"
                                    ],
                         "localLatest":  "2026-06-07 01:15:30",
-                        "remotePushedAt":  null,
+                        "remotePushedAt":  "2026-06-10 00:14:13",
                         "remoteHead":  null,
-                        "checkSource":  "unknown",
-                        "status":  "unknown",
-                        "message":  "API failed: 远程服务器返回错误: (403) 已禁止。. Git fallback was not enabled."
+                        "checkSource":  "github_api",
+                        "status":  "update_available",
+                        "message":  "GitHub API checked. Remote commits are newer than the local SKILL.md timestamp."
                     }
                 ]
 }

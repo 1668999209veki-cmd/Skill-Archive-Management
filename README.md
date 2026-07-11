@@ -72,14 +72,16 @@ $env:SKILL_ARCHIVE_AGENTS_SKILLS_DIR="$env:USERPROFILE\.agents\skills"
 .
 ├── skill-archive.html              # 生成后的 Skill 档案页
 ├── skill-source-index.json         # Skill 来源索引
-├── skill-update-report.*           # 更新检查报告
 ├── scripts/                        # 生成、更新检查和素材处理脚本
+├── launchers/                      # Windows / macOS 一键启动器
 ├── assets/
 │   ├── desktop-pet/                # 小V 页面管理员素材
 │   └── previews/                   # 页面预览和视觉参考图
 ├── docs/                           # 项目说明和设计记录
-├── stop-slop-mvp/                  # 附带的轻量测试项目
-├── 小demo/poster-wallpaper-factory/ # 附带的海报生成测试项目
+├── reports/                        # 更新检查报告和运行摘要
+├── showcase/                       # 路演页、布局探索和展示素材
+├── skills/                         # 随仓库附带的本地 Skill 包
+├── examples/                       # 附带的轻量测试/演示项目
 ├── .env.example                    # 环境变量示例
 ├── pet-secrets.example.js          # 小V 模型配置示例
 ├── OPEN_SOURCE_SECURITY_AUDIT.md   # 开源安全自查记录
@@ -125,8 +127,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\check-skill-update
 运行轻量测试：
 
 ```powershell
-npm test --prefix .\stop-slop-mvp
-npm test --prefix ".\小demo\poster-wallpaper-factory"
+npm test --prefix .\examples\stop-slop-mvp
+npm test --prefix ".\examples\小demo\poster-wallpaper-factory"
 ```
 
 ## 小V 本地模型配置

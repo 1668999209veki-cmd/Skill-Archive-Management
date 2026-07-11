@@ -1,10 +1,12 @@
 param(
-  [string]$ReportPath = (Join-Path (Get-Location) "skill-update-report.json"),
+  [string]$ReportPath = (Join-Path (Join-Path (Get-Location) "reports") "skill-update-report.json"),
   [string]$SourceIndexPath = (Join-Path (Get-Location) "skill-source-index.json"),
-  [string]$OutputPath = (Join-Path (Get-Location) "skill-update-run.json")
+  [string]$OutputPath = (Join-Path (Join-Path (Get-Location) "reports") "skill-update-run.json")
 )
 
 $ErrorActionPreference = "Continue"
+
+New-Item -ItemType Directory -Force -Path (Split-Path -Parent $OutputPath) | Out-Null
 
 function Get-ConfiguredPath {
   param(
