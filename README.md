@@ -2,7 +2,20 @@
 
 这是一个本地 Skill 档案归档页，用来把已安装的 Codex / Agent skills、调用统计、更新检查结果和页面宠物管理员“小V”整理到同一个 HTML 页面里。
 
-仓库当前按私有仓库使用。请不要把真实 API Key、`.env`、本地导出视频、临时截图或第三方运行配置提交到 Git。
+仓库已按开源项目整理。请不要把真实 API Key、`.env`、本地导出视频、临时截图或第三方运行配置提交到 Git。
+
+## 页面说明
+
+打开 `skill-archive.html` 后，可以直接浏览本机归档出来的 Skill 清单。页面会展示每个 Skill 的来源、分类、安装/更新时间、历史调用统计和推荐信息。
+
+页面顶部提供搜索、分类筛选和排序：
+
+- `count`：按历史调用次数排序。
+- `date`：按归档或更新时间排序。
+- `name`：按 Skill 名称排序。
+- `category`：按分类排序。
+
+每张卡片都会带有 `data-history-count` 字段，方便脚本或浏览器调试时读取调用统计。页面里的“小V”管理员可以回答当前推荐 Skill 的用途、安装时间、投喂规则和基础闲聊；如果没有配置本地模型密钥，小V仍会保留本地规则回答。
 
 ## 主要内容
 
@@ -81,4 +94,10 @@ npm test --prefix ".\小demo\poster-wallpaper-factory"
 
 ## GitHub
 
-目标是私有仓库访问。GitHub 私有仓库通过账号权限控制访问，不支持给单个仓库额外设置一个网页访问密码。
+开源仓库地址：
+
+https://github.com/1668999209veki-cmd/Skill-Archive-with-Admin
+
+## License
+
+MIT License. See `LICENSE`.
