@@ -13,6 +13,16 @@
 
 ## 快速开始
 
+Windows 用户可以直接双击：
+
+```text
+启动 Skill档案管理.cmd
+```
+
+它会生成并打开 `skill-archive.html`，也就是项目默认看板。
+
+命令行方式：
+
 ```powershell
 git clone https://github.com/1668999209veki-cmd/Skill-Archive-Management.git
 cd Skill-Archive-Management
@@ -61,6 +71,12 @@ $env:SKILL_ARCHIVE_AGENTS_SKILLS_DIR="$env:USERPROFILE\.agents\skills"
 ## 常用命令
 
 一键生成并打开看板：
+
+```powershell
+.\启动 Skill档案管理.cmd
+```
+
+或：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup-dashboard.ps1
