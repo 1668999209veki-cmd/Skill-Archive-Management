@@ -2152,6 +2152,13 @@ $($rows -join "`n")
       return cards.filter(card => card.dataset.installed === "true");
     }
 
+    function installedSkillNamesForPet() {
+      return installedCardsForPet()
+        .map(card => card.dataset.name)
+        .filter(Boolean)
+        .sort((a, b) => a.localeCompare(b));
+    }
+
     function normalizePetState() {
       const state = loadPetState();
       const elapsed = daysBetween(state.day, petToday);
@@ -2166,10 +2173,21 @@ $($rows -join "`n")
       }
       if (!state.day) state.day = petToday;
       const previousInstalled = Number(state.installedCount || 0);
-      if (previousInstalled && installedSkillCount > previousInstalled && !state.dead) {
-        state.fullness = Math.min(30, Number(state.fullness || 0) + (installedSkillCount - previousInstalled) * 5);
+      const currentInstalledNames = installedSkillNamesForPet();
+      const previousInstalledNames = Array.isArray(state.installedSkillNames) ? state.installedSkillNames.filter(Boolean) : [];
+      let newlyInstalledCount = 0;
+      if (previousInstalledNames.length) {
+        const previousNameSet = new Set(previousInstalledNames);
+        newlyInstalledCount = currentInstalledNames.filter(name => !previousNameSet.has(name)).length;
+      } else if (previousInstalled && installedSkillCount > previousInstalled) {
+        newlyInstalledCount = installedSkillCount - previousInstalled;
+      }
+      if (newlyInstalledCount > 0) {
+        state.fullness = Math.min(30, Number(state.fullness || 0) + newlyInstalledCount * 5);
+        if (state.fullness > 0) state.dead = false;
       }
       state.installedCount = installedSkillCount;
+      state.installedSkillNames = currentInstalledNames;
       if (!Array.isArray(state.fedToday)) state.fedToday = [];
       if (!Array.isArray(state.reviveVotes)) state.reviveVotes = [];
       if (!state.bargains || typeof state.bargains !== "object" || Array.isArray(state.bargains)) state.bargains = {};
