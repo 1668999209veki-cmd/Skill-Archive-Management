@@ -62,7 +62,7 @@ Use the bundled script for most tasks. Resolve the script path relative to this 
 Example:
 
 ```powershell
-$skill = "C:\Users\16689\Documents\skills\moneyprinterturbo-video"
+$skill = Split-Path -Parent $PSCommandPath
 & "$skill\scripts\mpt_generate.ps1" `
   -Subject "用60秒介绍上海城市夜景和外滩旅行灵感" `
   -Aspect "9:16" `

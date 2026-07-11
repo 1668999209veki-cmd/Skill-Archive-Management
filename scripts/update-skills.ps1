@@ -6,10 +6,21 @@ param(
 
 $ErrorActionPreference = "Continue"
 
+function Get-ConfiguredPath {
+  param(
+    [string]$EnvName,
+    [string]$Fallback
+  )
+
+  $value = [System.Environment]::GetEnvironmentVariable($EnvName)
+  if ([string]::IsNullOrWhiteSpace($value)) { return $Fallback }
+  return $value
+}
+
 $roots = @(
-  "C:\Users\16689\Documents\skills",
-  "C:\Users\16689\.codex\skills",
-  "C:\Users\16689\.agents\skills"
+  (Get-ConfiguredPath "SKILL_ARCHIVE_PROJECT_SKILLS_DIR" (Get-Location).Path),
+  (Get-ConfiguredPath "SKILL_ARCHIVE_CODEX_SKILLS_DIR" (Join-Path $env:USERPROFILE ".codex\skills")),
+  (Get-ConfiguredPath "SKILL_ARCHIVE_AGENTS_SKILLS_DIR" (Join-Path $env:USERPROFILE ".agents\skills"))
 )
 
 function Get-FrontMatterName {
@@ -73,6 +84,8 @@ function Get-RemoteSkillDir {
     [string]$SkillName
   )
 
+  # Risk note: this update path clones or inspects remote repositories.
+  # Review source URLs first and only update Skills from trusted repositories.
   $tempRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("skill-update-" + [guid]::NewGuid().ToString("N"))
   try {
     $remote = "https://github.com/$Repo.git"

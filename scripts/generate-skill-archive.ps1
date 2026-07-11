@@ -9,11 +9,41 @@ function T {
   return [System.Net.WebUtility]::HtmlDecode($EntityText)
 }
 
+function Get-ConfiguredPath {
+  param(
+    [string]$EnvName,
+    [string]$Fallback
+  )
+
+  $value = [System.Environment]::GetEnvironmentVariable($EnvName)
+  if ([string]::IsNullOrWhiteSpace($value)) { return $Fallback }
+  return $value
+}
+
+function ConvertTo-PublicPath {
+  param(
+    [string]$Path,
+    [array]$RootConfigs
+  )
+
+  foreach ($root in ($RootConfigs | Sort-Object { $_.Path.Length } -Descending)) {
+    if ($Path.StartsWith($root.Path, [System.StringComparison]::OrdinalIgnoreCase)) {
+      $relative = $Path.Substring($root.Path.Length).TrimStart("\", "/")
+      if ($relative.Length -eq 0) { return $root.PublicPrefix }
+      return ($root.PublicPrefix + "/" + ($relative -replace "\\", "/"))
+    }
+  }
+
+  return "{{LOCAL_PATH}}"
+}
+
 $roots = @(
-  @{ Path = "C:\Users\16689\Documents\skills"; Label = (T "&#x4E2A;&#x4EBA;&#x6574;&#x7406;"); Rank = 0 },
-  @{ Path = "C:\Users\16689\.codex\skills"; Label = (T "Codex &#x5DF2;&#x5B89;&#x88C5;"); Rank = 1 },
-  @{ Path = "C:\Users\16689\.agents\skills"; Label = (T "Agents &#x5DF2;&#x5B89;&#x88C5;"); Rank = 2 }
+  # Fill these paths through environment variables when running on another machine.
+  @{ Path = (Get-ConfiguredPath "SKILL_ARCHIVE_PROJECT_SKILLS_DIR" (Get-Location).Path); PublicPrefix = "{{PROJECT_SKILLS_DIR}}"; Label = (T "&#x4E2A;&#x4EBA;&#x6574;&#x7406;"); Rank = 0 },
+  @{ Path = (Get-ConfiguredPath "SKILL_ARCHIVE_CODEX_SKILLS_DIR" (Join-Path $env:USERPROFILE ".codex\skills")); PublicPrefix = "{{CODEX_SKILLS_DIR}}"; Label = (T "Codex &#x5DF2;&#x5B89;&#x88C5;"); Rank = 1 },
+  @{ Path = (Get-ConfiguredPath "SKILL_ARCHIVE_AGENTS_SKILLS_DIR" (Join-Path $env:USERPROFILE ".agents\skills")); PublicPrefix = "{{AGENTS_SKILLS_DIR}}"; Label = (T "Agents &#x5DF2;&#x5B89;&#x88C5;"); Rank = 2 }
 )
+$systemSkillsRoot = Join-Path $roots[1].Path ".system"
 
 function ConvertTo-HtmlText {
   param([AllowNull()][string]$Text)
@@ -99,8 +129,7 @@ function Get-SkillLink {
     return $sourceLine.Groups[1].Value.TrimEnd(".", ",", ")", "]", "`"")
   }
 
-  $escaped = $SkillPath -replace "\\", "/"
-  return "file:///$escaped"
+  return "#local-skill-file"
 }
 
 function Import-SkillSourceIndex {
@@ -405,7 +434,7 @@ foreach ($root in $roots) {
       "personal"
     } elseif ($root.Rank -eq 2) {
       "agents"
-    } elseif ($_.FullName.StartsWith("C:\Users\16689\.codex\skills\.system", [System.StringComparison]::OrdinalIgnoreCase)) {
+    } elseif ($_.FullName.StartsWith($systemSkillsRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
       "system"
     } else {
       "codex"
@@ -413,7 +442,7 @@ foreach ($root in $roots) {
     $sourceLabel = if ($sourceKind -eq "system") { T "System &#x5DF2;&#x5B89;&#x88C5;" } else { $root.Label }
     $source = @{
       label = $sourceLabel
-      path = $_.FullName
+      path = ConvertTo-PublicPath -Path $_.FullName -RootConfigs $roots
       updated = $_.LastWriteTime.ToString("yyyy-MM-dd HH:mm")
       ticks = $_.LastWriteTime.Ticks
       rank = $root.Rank
@@ -2227,6 +2256,8 @@ $($rows -join "`n")
     }
 
     async function postPetJson(apiBase, endpoint, apiKey, body, options = {}) {
+      // Risk note: this optional browser-side model call can consume paid API quota.
+      // Keep the API key in pet-secrets.local.js or environment-managed local config only.
       let lastError = null;
       const attempts = Math.max(1, Number(options.attempts || 1));
       const timeoutMs = Math.max(3000, Number(options.timeoutMs || petRequestTimeoutMs));

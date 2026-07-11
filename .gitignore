@@ -1,37 +1,82 @@
-# Local credentials and machine-specific config
+# Local environment variables may contain secrets.
 .env
+# Environment variants may contain API keys.
 .env.*
+# Public example env file is intentionally committed.
+!.env.example
+# Copied env files may contain credentials.
 *.env
+# Machine-local files are not reproducible or safe to publish.
 *.local
+# Machine-local variants may contain private state.
 *.local.*
+# Local page-pet API credentials.
 pet-secrets.local.js
+# Local archive overrides and private runtime config.
 skill-archive.local.js
 
-# Logs, caches, and temporary files
+# Private keys and certificates must stay out of Git.
+*.pem
+# Private key material must stay out of Git.
+*.key
+# Certificate bundles may contain private keys.
+*.p12
+# Certificate bundles may contain private keys.
+*.pfx
+# Local certificates are environment-specific.
+*.crt
+
+# Logs can include prompts, tokens, paths, or private data.
 *.log
+# Temporary files are not source artifacts.
 *.tmp
+# Temporary files are not source artifacts.
 *.temp
+# Generated review screenshots are local artifacts.
 pitch-check*.png
+# Generated video frame checks are local artifacts.
 pitch-final-frame*.png
+# Temporary media extraction/cache directory.
 .seek-tmp-*/
+# Generated local video export.
 skill-archive-product-pitch*.mp4
+# Generated local audio export.
 skill-archive-product-pitch*.wav
+# Tool cache and transient runtime files.
 .cache/
+# Temporary working directory.
 tmp/
+# Temporary working directory.
 temp/
 
-# Dependency and build output
+# Third-party dependencies are restored by package manager.
 node_modules/
+# Build output is regenerated.
 dist/
+# Build output is regenerated.
 build/
+# Next.js build/cache output is regenerated.
 .next/
+# Test coverage output is regenerated.
 coverage/
 
-# Local editor/OS state
+# Model weights are large and often license-sensitive.
+*.safetensors
+# Model checkpoints are large and often license-sensitive.
+*.ckpt
+# Model binaries are large generated artifacts.
+*.onnx
+# Local model weights are large and license-sensitive.
+*.gguf
+
+# macOS filesystem metadata.
 .DS_Store
+# Windows filesystem metadata.
 Thumbs.db
+# Local editor settings.
 .vscode/
+# Local IDE settings.
 .idea/
 
-# Third-party runtime config that commonly receives API keys
+# Third-party runtime config commonly contains API keys.
 MoneyPrinterTurbo/config.toml
