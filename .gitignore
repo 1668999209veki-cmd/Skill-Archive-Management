@@ -42,6 +42,9 @@ pitch-final-frame*.png
 skill-archive-product-pitch*.mp4
 # Generated local audio export.
 skill-archive-product-pitch*.wav
+# Generated layout exploration pages and screenshots.
+skill-archive-*-layout*.html
+skill-archive-*-layout*.png
 # Tool cache and transient runtime files.
 .cache/
 # Temporary working directory.
