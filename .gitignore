@@ -53,6 +53,8 @@ skill-archive-*-layout*.png
 tmp/
 # Temporary working directory.
 temp/
+# Isolated implementation worktrees are local-only.
+.worktrees/
 
 # Third-party dependencies are restored by package manager.
 node_modules/
