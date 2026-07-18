@@ -19,7 +19,7 @@ function Assert-True {
   if (-not $Condition) { throw $Message }
 }
 
-New-Item -ItemType Directory -Force -Path (Join-Path $projectSkills "fixture-skill"), (Join-Path $projectSkills "nested\fixture-skill"), (Join-Path $projectSkills "helper-skill"), $codexSkills, $agentsSkills, $codexAgents | Out-Null
+New-Item -ItemType Directory -Force -Path (Join-Path $projectSkills "fixture-skill"), (Join-Path $projectSkills "nested\fixture-skill"), (Join-Path $projectSkills "helper-skill"), (Join-Path $projectSkills "pointer-package\skills\primary-skill"), $codexSkills, $agentsSkills, $codexAgents | Out-Null
 $fixtureSkill = @'
 ---
 name: fixture-skill
@@ -44,6 +44,9 @@ confidence: 0.91
 Set-Content -LiteralPath (Join-Path $projectSkills "fixture-skill\SKILL.md") -Encoding UTF8 -Value $fixtureSkill
 Set-Content -LiteralPath (Join-Path $projectSkills "nested\fixture-skill\SKILL.md") -Encoding UTF8 -Value $fixtureSkill
 Set-Content -LiteralPath (Join-Path $projectSkills "helper-skill\SKILL.md") -Encoding UTF8 -Value "---`nname: helper-skill`ndescription: Helper skill for relationship tests.`n---"
+Set-Content -LiteralPath (Join-Path $projectSkills "pointer-package\SKILL.md") -Encoding UTF8 -Value "---`nname: pointer-package`ndescription: Root pointer for the primary Skill.`n---`n`nPrimary skill entry:`n`n````text`nskills/primary-skill/SKILL.md`n````"
+Set-Content -LiteralPath (Join-Path $projectSkills "pointer-package\skills\primary-skill\SKILL.md") -Encoding UTF8 -Value "---`nname: primary-skill`ndescription: Primary Skill from a package with a repository install source.`n---"
+Set-Content -LiteralPath (Join-Path $projectSkills "pointer-package\README.md") -Encoding UTF8 -Value "Install from https://github.com/example-org/pointer-package.git"
 Set-Content -LiteralPath (Join-Path $codexAgents "frontend-developer.toml") -Encoding UTF8 -Value 'name = "Frontend Developer"'
 Set-Content -LiteralPath (Join-Path $codexAgents "copywriter.toml") -Encoding UTF8 -Value 'name = "Copywriter"'
 Set-Content -LiteralPath (Join-Path $codexAgents "explorer.toml") -Encoding UTF8 -Value 'name = "Explorer"'
@@ -134,6 +137,9 @@ try {
   Assert-True ($html.Contains('localDayString') -and $html.Contains('dailyPetRecommendations') -and $html.Contains('recommendationDay')) "Expected daily local Skill recommendations for pet."
   Assert-True ($html.Contains('has-task-results')) "Expected task results to disable sticky toolbar while results are shown."
   Assert-True ($html.Contains('data-name="fixture-skill"') -and $html.Contains('data-resource-kind="skill"')) "Expected fixture skill to be typed as skill."
+  Assert-True (-not $html.Contains('data-name="pointer-package"')) "Root pointer files must not render as duplicate Skill cards."
+  $primaryPointerCard = [regex]::Match($html, '(?s)<article[^>]+data-name="primary-skill".*?</article>').Value
+  Assert-True ($primaryPointerCard.Contains('https://github.com/example-org/pointer-package')) "Nested package Skills must inherit the package GitHub install source."
   $fixtureCard = [regex]::Match($html, '(?s)<article[^>]+data-name="fixture-skill".*?</article>').Value
   Assert-True (([regex]::Matches($fixtureCard, '<span class="source">')).Count -eq 1) "Expected duplicate source labels for one source type to render once."
   Assert-True (([regex]::Matches($html, 'data-name="agency-agents"')).Count -eq 1) "Expected one agency-agents card."

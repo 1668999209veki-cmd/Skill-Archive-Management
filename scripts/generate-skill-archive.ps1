@@ -308,6 +308,64 @@ function Get-ChineseDescription {
 
   return "$(T '&#x7528;&#x4E8E;') $categoryText$(T '&#xFF1A;&#x5904;&#x7406;&#x4E0E;') $Name $(T '&#x76F8;&#x5173;&#x7684;&#x4E13;&#x9879;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x6309;&#x8BE5; skill &#x7684;&#x6D41;&#x7A0B;&#x5B8C;&#x6210;&#x64CD;&#x4F5C;&#x3002;')"
 }
+function Get-GitHubRepositoryUrl {
+  param([AllowNull()][string]$Text)
+
+  if ([string]::IsNullOrWhiteSpace($Text)) { return "" }
+  $match = [regex]::Match($Text, "https://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)(?:\.git)?(?:/[A-Za-z0-9_./?=%#~:+-]+)?")
+  if (-not $match.Success) { return "" }
+  return "https://github.com/$($match.Groups[1].Value)/$($match.Groups[2].Value -replace '\\.git$', '')"
+}
+
+$packageSourceLinkCache = @{}
+function Get-PackageSourceLink {
+  param([string]$SkillPath)
+
+  if ([string]::IsNullOrWhiteSpace($SkillPath)) { return "" }
+  $directory = Split-Path -Parent $SkillPath
+  for ($depth = 0; $depth -lt 5 -and -not [string]::IsNullOrWhiteSpace($directory); $depth++) {
+    $cacheKey = $directory.ToLowerInvariant()
+    if ($packageSourceLinkCache.ContainsKey($cacheKey)) { return $packageSourceLinkCache[$cacheKey] }
+
+    foreach ($fileName in @("skill.json", "package.json", "README.md")) {
+      $candidate = Join-Path $directory $fileName
+      if (-not (Test-Path -LiteralPath $candidate -PathType Leaf)) { continue }
+      try {
+        $text = (Get-Content -LiteralPath $candidate -Encoding UTF8 -TotalCount 320) -join "`n"
+        $link = Get-GitHubRepositoryUrl -Text $text
+        if ($link) {
+          $packageSourceLinkCache[$cacheKey] = $link
+          return $link
+        }
+      } catch {
+      }
+    }
+
+    $packageSourceLinkCache[$cacheKey] = ""
+    $parent = Split-Path -Parent $directory
+    if ($parent -eq $directory) { break }
+    $directory = $parent
+  }
+
+  return ""
+}
+
+function Get-RootPointerTargetPath {
+  param(
+    [string]$Content,
+    [string]$SkillPath
+  )
+
+  if ($Content -notmatch "(?i)\broot pointer\b|\bprimary skill entry\b") { return "" }
+  $match = [regex]::Match($Content, '(?im)^\s*`?((?:[A-Za-z0-9_.-]+[\\/])+SKILL\.md)`?\s*$')
+  if (-not $match.Success) { return "" }
+
+  $relative = $match.Groups[1].Value -replace "[\\/]", ([System.IO.Path]::DirectorySeparatorChar.ToString())
+  $target = Join-Path (Split-Path -Parent $SkillPath) $relative
+  if (Test-Path -LiteralPath $target -PathType Leaf) { return $target }
+  return ""
+}
+
 function Get-SkillLink {
   param(
     [string]$Name,
@@ -324,8 +382,12 @@ function Get-SkillLink {
   $head = (($Content -split "`n") | Select-Object -First 90) -join "`n"
   $sourceLine = [regex]::Match($head, "(?im)^(?:\s*(?:homepage|repository|repo|source|upstream|upstream source|upstream project|install source|provenance|canonical)\s*:|.*(?:Upstream|Source|homepage|repository|project|canonical):).*(https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_./?=%#~:+-]+)?)")
   if ($sourceLine.Success) {
-    return $sourceLine.Groups[1].Value.TrimEnd(".", ",", ")", "]", "`"")
+    $contentLink = Get-GitHubRepositoryUrl -Text $sourceLine.Groups[1].Value.TrimEnd(".", ",", ")", "]", "`"")
+    if ($contentLink) { return $contentLink }
   }
+
+  $packageLink = Get-PackageSourceLink -SkillPath $SkillPath
+  if ($packageLink) { return $packageLink }
 
   return "#local-skill-file"
 }
@@ -624,6 +686,7 @@ function Get-HistoricalSkillCounts {
 
 $recordsByName = @{}
 $contentByRecordKey = @{}
+$rootPointerRecordKeys = @{}
 $sourceIndex = Import-SkillSourceIndex
 
 foreach ($root in $roots) {
@@ -633,8 +696,13 @@ foreach ($root in $roots) {
     if ($_.FullName -match '(?i)[\\/][^\\/]+\.backup-[^\\/]+[\\/]SKILL\.md$') { return }
 
     $content = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
+    $rootPointerTarget = Get-RootPointerTargetPath -Content $content -SkillPath $_.FullName
     $name = Get-FrontMatterValue -Content $content -Key "name"
     if (-not $name) { $name = Split-Path -Leaf $_.DirectoryName }
+    if ($rootPointerTarget) {
+      $rootPointerRecordKeys[$name.ToLowerInvariant()] = $true
+      return
+    }
 
     $description = Get-FrontMatterValue -Content $content -Key "description"
     if (-not $description) { $description = Get-FirstHeading -Content $content }
@@ -708,6 +776,11 @@ foreach ($root in $roots) {
       $contentByRecordKey[$key] = $content
     }
   }
+}
+
+foreach ($rootPointerKey in $rootPointerRecordKeys.Keys) {
+  [void]$recordsByName.Remove($rootPointerKey)
+  [void]$contentByRecordKey.Remove($rootPointerKey)
 }
 
 if (Test-Path -LiteralPath $codexAgentsRoot) {
