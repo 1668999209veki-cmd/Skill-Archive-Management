@@ -1882,7 +1882,7 @@
     <div class="wrap task-advisor" aria-label="&#x4EFB;&#x52A1;&#x63CF;&#x8FF0;&#x63A8;&#x8350; Skill">
       <label class="task-advisor-label" for="taskAdvisorInput">&#x4EFB;&#x52A1;&#x63CF;&#x8FF0;</label>
       <div class="task-advisor-row">
-        <textarea id="taskAdvisorInput" rows="2" placeholder="&#x63CF;&#x8FF0;&#x4EFB;&#x52A1;,&#x6216; &#x5B89;&#x88C5;Skill" aria-label="&#x8F93;&#x5165;&#x4EFB;&#x52A1;&#x63CF;&#x8FF0;&#x6216; Skill &#x5B89;&#x88C5;&#x6307;&#x4EE4;"></textarea>
+        <textarea id="taskAdvisorInput" rows="2" placeholder="&#x63CF;&#x8FF0;&#x4EFB;&#x52A1;" aria-label="&#x8F93;&#x5165;&#x4EFB;&#x52A1;&#x63CF;&#x8FF0;"></textarea>
         <button type="button" id="taskAdvisorRun" class="task-advisor-run">&#x63A8;&#x8350; Skill</button>
       </div>
       <div id="taskAdvisorOutput" class="task-advisor-output" hidden aria-live="polite"></div>
@@ -14173,19 +14173,7 @@
     const taskStopTokens = new Set(["帮我", "一下", "这个", "那个", "一个", "进行", "可以", "需要", "我的", "你的", "他的", "她的", "以及", "并且", "skill"]);
     const countStoreKey = "skillArchiveLocalCallIncrements";
     const githubSearchCacheKey = "skillArchiveGithubSearchCache";
-    const pendingInstallStorageKey = "skillArchivePendingInstall";
     let taskAdvisorRequestId = 0;
-    let taskAdvisorCommandState = null;
-    const installSkillTriggers = [
-      "\u5b89\u88c5skill",
-      "\u5bfc\u5165skill",
-      "\u62c9\u53d6skill",
-      "\u4e0b\u8f7dskill",
-      "\u6dfb\u52a0skill",
-      "\u83b7\u53d6skill",
-      "\u5b89\u88c5\u6280\u80fd",
-      "\u5bfc\u5165\u6280\u80fd"
-    ];
     let sortMode = "count";
     let showUpdatesOnly = false;
     const installedSkillCount = 293;
@@ -14899,90 +14887,6 @@
 
     function normalizeTaskKey(value) {
       return normalizeTaskText(value).trim();
-    }
-
-    function extractGithubRepositoryUrl(value) {
-      const urls = String(value || "").match(/https?:\/\/[^\s<>"']+/gi) || [];
-      for (const rawUrl of urls) {
-        const candidate = rawUrl.replace(/[.,;!?)\]\uff0c\u3002\uff1b\uff01\uff1f\uff09\u3011]+$/g, "");
-        if (/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+(?:\.git)?\/?$/.test(candidate)) {
-          return candidate.replace(/\/$/, "");
-        }
-      }
-      return "";
-    }
-
-    function githubRepositoryName(value) {
-      const match = String(value || "").match(/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/([A-Za-z0-9_.-]+?)(?:\.git)?\/?$/);
-      return match ? match[1] : "";
-    }
-
-    function parseTaskCommand(value) {
-      const original = String(value || "").trim();
-      const normalized = normalizeTaskText(original);
-      const targetRepoUrl = extractGithubRepositoryUrl(original);
-      const exactTrigger = installSkillTriggers.find(trigger => normalized.includes(trigger));
-      const actionMatch = normalized.match(/(?:\u5e2e\u6211|\u8bf7|\u9ebb\u70e6\u4f60)?\s*(\u5b89\u88c5|\u5bfc\u5165|\u62c9\u53d6|\u4e0b\u8f7d|\u6dfb\u52a0|\u83b7\u53d6)\s*(.*)$/i);
-      const actionRemainder = actionMatch ? String(actionMatch[2] || "") : "";
-      const hasSeparatedSkill = !!(actionMatch && (/skill/i.test(actionRemainder) || /\u6280\u80fd/.test(actionRemainder)));
-      const namedInstallAction = !!(actionMatch && actionMatch[1] === "\u5b89\u88c5" && actionRemainder.trim().length > 0);
-      if (!exactTrigger && !hasSeparatedSkill && !namedInstallAction) {
-        return {
-          operate_type: "normal_recommend",
-          target_skill_name: "",
-          target_repo_url: "",
-          additional_description: "",
-          need_local_search: false,
-          need_github_search: false
-        };
-      }
-
-      let remainder = actionRemainder;
-      if (!actionMatch && exactTrigger) {
-        remainder = normalized.slice(normalized.indexOf(exactTrigger) + exactTrigger.length);
-      }
-      remainder = remainder
-        .replace(/^\s*(?:skill|\u6280\u80fd)\s*[:\uff1a,\uff0c-]?\s*/i, "")
-        .replace(/^\s*[:\uff1a,\uff0c-]+\s*/, "")
-        .trim();
-      const parts = remainder.split(/[,\uff0c;\uff1b\u3002\n]+/).map(part => part.trim()).filter(Boolean);
-      let targetName = parts.shift() || "";
-      const descriptionParts = parts.slice();
-      const purposeMatch = targetName.match(/^(.*?)(?:\s+|)(?:\u7528\u4e8e|\u529f\u80fd\u662f|\u53ef\u4ee5)(.+)$/i);
-      if (purposeMatch && purposeMatch[1].trim()) {
-        targetName = purposeMatch[1].trim();
-        descriptionParts.unshift(purposeMatch[2].trim());
-      }
-      targetName = targetName.replace(/[.!?\uff01\uff1f]+$/g, "").trim();
-      if (targetRepoUrl) targetName = githubRepositoryName(targetRepoUrl);
-      return {
-        operate_type: "install_skill",
-        target_skill_name: targetName,
-        target_repo_url: targetRepoUrl,
-        additional_description: descriptionParts.join("\uff1b"),
-        need_local_search: true,
-        need_github_search: true
-      };
-    }
-
-    function normalizedInstallTarget(value) {
-      return normalizeTaskKey(value)
-        .replace(/^[$@]+/, "")
-        .replace(/(?:skill|\u6280\u80fd|\u6a21\u677f)+$/i, "")
-        .replace(/[\s_-]+/g, "");
-    }
-
-    function findLocalInstallMatch(command) {
-      const target = normalizedInstallTarget(command && command.target_skill_name);
-      if (!target) return null;
-      const installedCandidates = skillRecords.filter(record => {
-        if (!isAtomicSkillRecord(record)) return false;
-        const card = cardBySkillName.get(normalizeTaskKey(record.name));
-        return !!(card && card.dataset.installed === "true");
-      });
-      const exact = installedCandidates.find(record => normalizedInstallTarget(record.name) === target);
-      if (!exact) return null;
-      return scoreTaskCandidate(exact, command.target_skill_name, taskTokens(command.target_skill_name));
     }
 
     // STRUCTURED_MATCHER_START
@@ -16578,12 +16482,6 @@
       return card;
     }
 
-    function githubResultIsInstalled(repo) {
-      const target = githubRepositoryName(repo && repo.url);
-      const match = findLocalInstallMatch({ target_skill_name: target });
-      return !!match;
-    }
-
     function createGithubResourceCard(candidate, repo, index) {
       const card = document.createElement("article");
       card.className = "task-resource-card external";
@@ -16622,14 +16520,7 @@
       copyButton.type = "button";
       copyButton.textContent = "复制调用指令";
       copyButton.addEventListener("click", () => copyTaskAdvisorText(copyButton, "使用 " + repo.name + " 完成：" + candidate.usage, repo.name));
-      const installButton = document.createElement("button");
-      installButton.type = "button";
-      const installed = githubResultIsInstalled(repo);
-      installButton.textContent = installed ? "已安装" : "安装";
-      installButton.disabled = installed;
-      installButton.addEventListener("click", () => installGithubSearchResult(repo.url, installButton));
       actions.appendChild(copyButton);
-      actions.appendChild(installButton);
       card.appendChild(actions);
       return card;
     }
@@ -17249,13 +17140,6 @@
 
       taskAdvisorOutput.hidden = false;
       toolbar?.classList.add("has-task-results");
-      const command = parseTaskCommand(taskText);
-      publishTaskCommand(command);
-      if (command.operate_type === "install_skill") {
-        runSkillInstallFlow(command, requestId);
-        return;
-      }
-
       renderTaskSearchProgress("正在本地检索", "正在匹配本机已安装的 Skill、Agent 与 Agent 集群。");
       setPetSearchState("小V先检查本地档案，看看哪些能力可以直接使用。");
       const localReport = buildSkillMatchReport(taskText);
@@ -17775,7 +17659,6 @@
     renderPet();
     renderRelationships();
     render();
-    restoreInstalledSkillResult();
   </script>
 </body>
 </html>
